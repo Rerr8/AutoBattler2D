@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc193da5bef3694892b28059a32465e, type: 3}
+  m_Name: Golem
+  m_EditorClassIdentifier: 
+  enemyName: Golem
+  health: 10
+  strength: 3
+  agility: 1
+  stamina: 3
+  weapon: {fileID: 11400000, guid: ba32a6ba615c64e488c290cc844b9b8e, type: 2}
+  rewardWeapon: {fileID: 11400000, guid: 146dc9caff49a694c89fb57b839ccae1, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 6e0894b6f0bb16c44a4906a98e55a65c, type: 2}
+  enemySprite: {fileID: -3030794605390870092, guid: 07322bf8ca26b844abec4dedb2bc0038, type: 3}

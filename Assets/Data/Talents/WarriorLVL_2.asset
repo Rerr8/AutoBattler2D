@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fe1e004728656449a70e6f2565003c, type: 3}
+  m_Name: WarriorLVL_2
+  m_EditorClassIdentifier: 
+  talentName: Warrior LVL_2
+  description: "\u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C
+    \"\u0429\u0438\u0442\": -3 \u043A \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u043C\u043E\u043C\u0443
+    \u0443\u0440\u043E\u043D\u0443 \u0435\u0441\u043B\u0438 \u0441\u0438\u043B\u0430
+    \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u0432\u044B\u0448\u0435
+    \u0441\u0438\u043B\u044B \u0430\u0442\u0430\u043A\u0443\u044E\u0449\u0435\u0433\u043E"
+  maxLevel: 1
+  talentIcon: {fileID: 2111098896394063768, guid: 13c76fbff2237b84eb4cd13671e54cf0, type: 3}
+  maxHealthBonus: 5
+  strengthBonus: 0
+  agilityBonus: 0
+  staminaBonus: 0
+  abilitiesGranted:
+  - {fileID: 11400000, guid: 9467c18a25c2e1049a714113cfd2dcbd, type: 2}
+  weaponGranted: {fileID: 0}

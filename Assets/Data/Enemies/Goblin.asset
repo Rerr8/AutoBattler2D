@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc193da5bef3694892b28059a32465e, type: 3}
+  m_Name: Goblin
+  m_EditorClassIdentifier: 
+  enemyName: Goblin
+  health: 5
+  strength: 1
+  agility: 1
+  stamina: 1
+  weapon: {fileID: 11400000, guid: 87827c5dae0113543b1049b2cbd3b824, type: 2}
+  rewardWeapon: {fileID: 11400000, guid: 6be2acc89a0374a46959e2a88a7e50b9, type: 2}
+  abilities: []
+  enemySprite: {fileID: 8749302817991680212, guid: 7ebfbb96efd380d4e99a79c645352edc, type: 3}

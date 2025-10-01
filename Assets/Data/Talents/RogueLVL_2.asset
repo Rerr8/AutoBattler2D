@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fe1e004728656449a70e6f2565003c, type: 3}
+  m_Name: RogueLVL_2
+  m_EditorClassIdentifier: 
+  talentName: Rogue LVL_2
+  description: "+1 \u043B\u043E\u0432\u043A\u043E\u0441\u0442\u044C"
+  maxLevel: 1
+  talentIcon: {fileID: -2474156393194497233, guid: 6db3721c453e1b542accd7656cadafa7, type: 3}
+  maxHealthBonus: 4
+  strengthBonus: 0
+  agilityBonus: 1
+  staminaBonus: 0
+  abilitiesGranted: []
+  weaponGranted: {fileID: 0}

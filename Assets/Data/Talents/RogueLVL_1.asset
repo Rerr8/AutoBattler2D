@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fe1e004728656449a70e6f2565003c, type: 3}
+  m_Name: RogueLVL_1
+  m_EditorClassIdentifier: 
+  talentName: Rogue LVL_1
+  description: "\u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C
+    \"\u0421\u043A\u0440\u044B\u0442\u0430\u044F \u0430\u0442\u0442\u0430\u043A\u0430\":
+    +1 \u043A \u0443\u0440\u043E\u043D\u0443, \u0435\u0441\u043B\u0438 \u043B\u043E\u0432\u043A\u043E\u0441\u0442\u044C
+    \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u0432\u044B\u0448\u0435
+    \u043B\u043E\u0432\u043A\u043E\u0441\u0442\u0438 \u0446\u0435\u043B\u0438"
+  maxLevel: 1
+  talentIcon: {fileID: 6768321152097675556, guid: ef7ef749b935fda48a12293d8c88169f, type: 3}
+  maxHealthBonus: 4
+  strengthBonus: 0
+  agilityBonus: 0
+  staminaBonus: 0
+  abilitiesGranted:
+  - {fileID: 11400000, guid: 9267aa273a575eb4f89ba6dd8ef53708, type: 2}
+  weaponGranted: {fileID: 11400000, guid: 6be2acc89a0374a46959e2a88a7e50b9, type: 2}
+  characterSprite: {fileID: 4979363154352999712, guid: 50e089cc06e586e4287f23115bbc5982, type: 3}

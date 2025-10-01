@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc193da5bef3694892b28059a32465e, type: 3}
+  m_Name: Ghost
+  m_EditorClassIdentifier: 
+  enemyName: Ghost
+  health: 6
+  strength: 1
+  agility: 3
+  stamina: 1
+  weapon: {fileID: 11400000, guid: 8f182f75e4892f8459f5014573db65dd, type: 2}
+  rewardWeapon: {fileID: 11400000, guid: 0c83d7407edd5ee4ca48dc9e6a62b8f7, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 9267aa273a575eb4f89ba6dd8ef53708, type: 2}
+  enemySprite: {fileID: -5899927303015767666, guid: 4d9cd6de13adf1843859ce7de2a41ce1, type: 3}
