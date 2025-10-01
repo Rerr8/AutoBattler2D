@@ -52,6 +52,7 @@ public class Character
         weapon = enemy.weapon;
         rewardWeapon = enemy.rewardWeapon;
         characterSprite = enemy.enemySprite;
+        abilities = enemy.abilities;
     }
 
     public void TakeDamage(int dmg)

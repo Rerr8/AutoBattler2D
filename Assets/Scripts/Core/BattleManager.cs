@@ -110,6 +110,7 @@ public class BattleManager : MonoBehaviour
 
     private void Attack(Character attacker, Character defender)
     {
+        attacker.turnsTaken++;
         int hitRange = attacker.agility + defender.agility;
         int roll = Random.Range(1, hitRange + 1);
         GameObject targetHitMarkObject = (defender == player) ? playerHitMark : enemyHitMark;
@@ -124,8 +125,8 @@ public class BattleManager : MonoBehaviour
 
         
         int damage = attacker.weapon.baseDamage + attacker.strength;
-        foreach (var ability in attacker.abilities) { damage = ability.OnBeforeAttack(attacker, defender, damage); }
-        foreach (var ability in defender.abilities) { damage = ability.OnBeforeDamage(defender, attacker, damage); }
+        foreach (var ability in attacker.abilities) { damage = ability.OnBeforeAttack(attacker, defender, damage);}
+        foreach (var ability in defender.abilities) { damage = ability.OnBeforeDamage(defender, attacker, damage);}
         damage = Mathf.Max(0, damage);
         defender.TakeDamage(damage);
 
@@ -134,7 +135,6 @@ public class BattleManager : MonoBehaviour
         StartCoroutine(ShowStatusEffectCoroutine(targetHitMarkObject, hitMarkSprites[Random.Range(0, hitMarkSprites.Count)], attacker == enemy));
         
         AddToLog($"{attacker.name} наносит {defender.name} <color=red>{damage}</color> урона!");
-        attacker.turnsTaken++;
     }
 
     private void EndBattle()
@@ -145,9 +145,14 @@ public class BattleManager : MonoBehaviour
             GameManager.Instance.PlayerWin();
             if (GameManager.Instance.wins >= 5) return;
 
-            GameManager.Instance.player.availableTalentPoints++;
             battleLogText.gameObject.SetActive(false);
             enemyStatsText.gameObject.SetActive(false);
+
+            if (GameManager.Instance.player.currentLevel < PlayerData.MAX_LEVEL)
+            {
+                GameManager.Instance.player.LevelUp();
+            }
+
             // // 2. Показываем UI выбора оружия
             if (newWeaponIcon != null && enemy.rewardWeapon.weaponIcon != null)
             {
@@ -181,13 +186,27 @@ public class BattleManager : MonoBehaviour
     {
         GameManager.Instance.player.currentWeapon = enemy.rewardWeapon;
         postBattleUI.SetActive(false);
-        ShowTalentTree();
+        HandlePostWeaponChoice();
     }
 
     public void OnRejectWeaponClicked()
     {
         postBattleUI.SetActive(false);
-        ShowTalentTree();
+        HandlePostWeaponChoice();
+    }
+
+    private void HandlePostWeaponChoice()
+    {
+        PlayerData player = GameManager.Instance.player;
+        if (player.availableTalentPoints > 0)
+        {
+            ShowTalentTree();
+        }
+        else
+        {
+            AddToLog("Нет доступных очков. Начинаем следующий бой...");
+            RestartBattle();
+        }
     }
 
     private void ShowTalentTree()

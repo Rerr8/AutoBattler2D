@@ -5,7 +5,7 @@ public class BarbarianRage : AbilitySO
 {
     public override int OnBeforeAttack(Character owner, Character target, int damage)
     {
-        if (owner.turnsTaken < 3)
+        if (owner.turnsTaken < 4)
         {
             return damage + 2;
         }

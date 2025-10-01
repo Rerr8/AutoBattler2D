@@ -24,7 +24,6 @@ public class CharacterCreationManager : MonoBehaviour
             PlayerData player = new PlayerData();
             GameManager.Instance.player = player;
             player.UpgradeTalent(talentChosen);
-            player.playerSprite = talentChosen.characterSprite;
             GameManager.Instance.StartBattlePhase();
         }
         else

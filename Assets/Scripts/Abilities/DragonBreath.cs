@@ -5,7 +5,7 @@ public class DragonBreath : AbilitySO
 {
     public override int OnBeforeAttack(Character owner, Character attacker, int damage)
     {
-        if ((owner.turnsTaken + 1) % 3 == 0)
+        if (owner.turnsTaken % 3 == 0)
         {
             return damage + 3;
         }

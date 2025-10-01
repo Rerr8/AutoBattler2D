@@ -4548,11 +4548,11 @@ MonoBehaviour:
   enemyRenderer: {fileID: 1944252827}
   allEnemies:
   - {fileID: 11400000, guid: 95016c4420e51d4439e16f003ba5ca90, type: 2}
-  - {fileID: 11400000, guid: 85127527bc1b57f4580792d756899585, type: 2}
-  - {fileID: 11400000, guid: b637f97836c848f4aa136844ad1c4cb8, type: 2}
-  - {fileID: 11400000, guid: 61862756f0b2e144694c5907aa4b2add, type: 2}
-  - {fileID: 11400000, guid: dcab37ec711670b4e97708cac424fe9c, type: 2}
   - {fileID: 11400000, guid: 254b9c364efa87247bbab5c2c2494d66, type: 2}
+  - {fileID: 11400000, guid: dcab37ec711670b4e97708cac424fe9c, type: 2}
+  - {fileID: 11400000, guid: 61862756f0b2e144694c5907aa4b2add, type: 2}
+  - {fileID: 11400000, guid: b637f97836c848f4aa136844ad1c4cb8, type: 2}
+  - {fileID: 11400000, guid: 85127527bc1b57f4580792d756899585, type: 2}
   takeWeaponButton: {fileID: 666787417}
   rejectWeaponButton: {fileID: 1751504205}
   continueButton: {fileID: 855500825}
@@ -5879,7 +5879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1100116191
 RectTransform:
   m_ObjectHideFlags: 0

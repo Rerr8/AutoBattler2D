@@ -5,6 +5,9 @@ using System.Linq;
 
 public class PlayerData
 {
+    public int currentLevel;
+    public const int MAX_LEVEL = 3;
+
     private int baseStrength;
     private int baseAgility;
     private int baseStamina;
@@ -32,10 +35,20 @@ public class PlayerData
         baseStamina = Random.Range(1, 4);
 
         currentWeapon = null;
+
+        currentLevel = 1;
         availableTalentPoints = 1;
 
-        CalculateStats();
+        RecalculateMaxHealth();
         RestoreHealth();
+    }
+
+    public void LevelUp()
+    {
+        if (currentLevel >= MAX_LEVEL) return;
+
+        currentLevel++;
+        availableTalentPoints += 1;
     }
 
     public void UpgradeTalent(TalentSO talent)
@@ -53,14 +66,19 @@ public class PlayerData
             this.currentWeapon = talent.weaponGranted;
         }
 
-        CalculateStats();
+        if (talent.characterSprite != null && this.playerSprite == null)
+        {
+            this.playerSprite = talent.characterSprite;
+        }
+
+        RecalculateMaxHealth();
         RestoreHealth();
     }
 
-    public void CalculateStats()
+    public void RecalculateMaxHealth()
     {
         int healthBonus = CalculateBonusFromTalents(talent => talent.maxHealthBonus);
-        maxHealth = healthBonus + this.Stamina;
+        maxHealth = healthBonus + this.Stamina * this.currentLevel;
     }
 
 

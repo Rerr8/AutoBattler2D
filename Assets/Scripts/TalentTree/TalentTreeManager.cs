@@ -37,7 +37,6 @@ public class TalentTreeManager : MonoBehaviour
             slot.talentButton.onClick.AddListener(() => CheckAvailablePoints(slot));
         }
         InitializeFromPlayerData();
-        UpdateAbilityPoints(0);
     }
 
     public void InitializeFromPlayerData()
