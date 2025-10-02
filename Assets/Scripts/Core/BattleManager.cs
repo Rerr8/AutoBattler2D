@@ -34,6 +34,8 @@ public class BattleManager : MonoBehaviour
     public List<Sprite> hitMarkSprites;
     public List<Sprite> missMarkSprites;
 
+    private const int MAX_TURNS = 100;
+
     private StringBuilder battleLog = new StringBuilder();
     private void AddToLog(string message) { battleLog.AppendLine(message); }
 
@@ -45,7 +47,7 @@ public class BattleManager : MonoBehaviour
 
         PlayerData playerData = GameManager.Instance.player;
         player = new Character(playerData);
-        playerRenderer.sprite = playerData.playerSprite;
+        playerRenderer.sprite = player.characterSprite;
 
         EnemySO enemySO = GetRandomEnemy();
         enemy = new Character(enemySO);
@@ -57,6 +59,7 @@ public class BattleManager : MonoBehaviour
 
     private System.Collections.IEnumerator BattleCoroutine()
     {
+        int currentTurn = 1;
         Character first = (player.agility >= enemy.agility) ? player : enemy;
         Character second = (first == player) ? enemy : player;
 
@@ -64,7 +67,7 @@ public class BattleManager : MonoBehaviour
         AddToLog($"{first.name} ходит первым благодаря высокой ловкости!\n");
         yield return new WaitForSeconds(4.5f);
 
-        while (player.currentHealth > 0 && enemy.currentHealth > 0)
+        while (player.currentHealth > 0 && enemy.currentHealth > 0 && currentTurn < MAX_TURNS)
         {
             yield return new WaitForSeconds(1.5f);
             Attack(first, second);
@@ -75,6 +78,8 @@ public class BattleManager : MonoBehaviour
             Attack(second, first);
             UpdateUI();
             yield return new WaitForSeconds(1.5f);
+
+            currentTurn++;
         }
 
         EndBattle();
@@ -161,12 +166,17 @@ public class BattleManager : MonoBehaviour
             }
 
             postBattleUI.SetActive(true);
-            takeWeaponButton.GetComponentInChildren<TMP_Text>().text = $"Взять {enemy.rewardWeapon.weaponName} (Урон: {enemy.rewardWeapon.baseDamage})";
-            rejectWeaponButton.GetComponentInChildren<TMP_Text>().text = $"Оставить {player.weapon.weaponName} (Урон: {player.weapon.baseDamage})";
+            takeWeaponButton.GetComponentInChildren<TMP_Text>().text = $"Заменить на {enemy.rewardWeapon.weaponName} (Урон: {enemy.rewardWeapon.baseDamage})";
+            rejectWeaponButton.GetComponentInChildren<TMP_Text>().text = $"Оставить текущее {player.weapon.weaponName} (Урон: {player.weapon.baseDamage})";
+        }
+        else if (player.currentHealth < 0)
+        {
+            AddToLog($"\n<color=grey>Вы проиграли...</color>");
+            GameManager.Instance.PlayerLose();
         }
         else
         {
-            AddToLog($"\n<color=grey>Вы проиграли...</color>");
+            // что делаем если никто друг друга убить не может?
             GameManager.Instance.PlayerLose();
         }
     }
@@ -212,7 +222,6 @@ public class BattleManager : MonoBehaviour
     private void ShowTalentTree()
     {
         talentTreePanel.SetActive(true);
-        talentTreePanel.GetComponent<TalentTreeManager>().InitializeFromPlayerData();
     }
 
     private IEnumerator ShowStatusEffectCoroutine(GameObject statusObject, Sprite effectSprite, bool flipX)

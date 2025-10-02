@@ -10,14 +10,14 @@ public class TalentTreeManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TalentSlot.OnAbilityPointSpent += HandleAbilityPointSpent;
-        TalentSlot.OnAbilityMaxed += HandleTalentMaxed;
+        TalentSlot.OnTalentPointSpent += HandleAvailablePointSpent;
+        TalentSlot.OnTalentMaxed += HandleTalentMaxed;
     }
 
     private void OnDisable()
     {
-        TalentSlot.OnAbilityPointSpent -= HandleAbilityPointSpent;
-        TalentSlot.OnAbilityMaxed -= HandleTalentMaxed; 
+        TalentSlot.OnTalentPointSpent -= HandleAvailablePointSpent;
+        TalentSlot.OnTalentMaxed -= HandleTalentMaxed;
     }
 
     // private void Start()
@@ -27,7 +27,7 @@ public class TalentTreeManager : MonoBehaviour
     //         slot.talentButton.onClick.AddListener(() => CheckAvailablePoints(slot));
 
     //     }
-    //     UpdateAbilityPoints(0);
+    //     UpdateAvailablePoints(0);
     // }
 
     private void Start()
@@ -45,7 +45,7 @@ public class TalentTreeManager : MonoBehaviour
         if (playerData == null) return;
 
         //pointsText.text = "Available Points: " + playerData.availableTalentPoints;
-        UpdateAbilityPoints(playerData.availableTalentPoints);
+        SetAvailablePoints(playerData.availableTalentPoints);
 
         foreach (TalentSlot slot in talentSlots)
         {
@@ -76,9 +76,9 @@ public class TalentTreeManager : MonoBehaviour
         }
     }
 
-    private void HandleAbilityPointSpent(TalentSlot talentSlot)
+    private void HandleAvailablePointSpent(TalentSlot talentSlot)
     {
-        UpdateAbilityPoints(-1);
+        UpdateAvailablePoints(-1);
     }
 
     private void HandleTalentMaxed(TalentSlot talentSlot)
@@ -92,7 +92,19 @@ public class TalentTreeManager : MonoBehaviour
         }
     }
 
-    public void UpdateAbilityPoints(int amount)
+    // public void UpdateAbilityPoints(int amount)
+    // {
+    //     availablePoints += amount;
+    //     pointsText.text = "Available Points: " + availablePoints;
+    // }
+
+    public void SetAvailablePoints(int amount)
+    {
+        availablePoints = amount;
+        pointsText.text = "Available Points: " + availablePoints;
+    }
+
+    public void UpdateAvailablePoints(int amount)
     {
         availablePoints += amount;
         pointsText.text = "Available Points: " + availablePoints;

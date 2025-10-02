@@ -16,7 +16,7 @@ public class Character
     //public List<EffectData> activeEffects = new();
     public Sprite characterSprite;
 
-    public Character(string name, int str, int agi, int stam, int baseHealth, WeaponSO w, int lvl = 1)
+    public Character(string name, int str, int agi, int stam, int baseHealth, WeaponSO w, WeaponSO rewardW = null, int lvl = 1)
     {
         this.name = name;
         level = lvl;
@@ -26,19 +26,23 @@ public class Character
         maxHealth = baseHealth + stamina;
         currentHealth = maxHealth;
         weapon = w;
+        rewardWeapon = rewardW;
         rewardWeapon = null;
     }
 
     public Character(PlayerData player)
     {
-        this.name = "Player";
-        maxHealth = player.maxHealth;
-        currentHealth = player.currentHealth;
+        name = "Player";
+        level = player.currentLevel;
         strength = player.Strength;
         agility = player.Agility;
         stamina = player.Stamina;
+        maxHealth = player.maxHealth;
+        currentHealth = player.currentHealth;
         weapon = player.currentWeapon;
         abilities = player.GetActiveAbilities();
+        characterSprite = player.playerSprite;
+        
     }
 
     public Character(EnemySO enemy)
@@ -51,8 +55,8 @@ public class Character
         currentHealth = maxHealth;
         weapon = enemy.weapon;
         rewardWeapon = enemy.rewardWeapon;
-        characterSprite = enemy.enemySprite;
         abilities = enemy.abilities;
+        characterSprite = enemy.enemySprite;
     }
 
     public void TakeDamage(int dmg)

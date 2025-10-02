@@ -18,6 +18,7 @@ public class PlayerData
 
     public int currentHealth { get; set; }
     public int maxHealth { get; private set; }
+    public int cumulativeStaminaHealthBonus;
     public WeaponSO currentWeapon { get; set; }
 
     public Dictionary<TalentSO, int> unlockedTalentsLevels = new Dictionary<TalentSO, int>();
@@ -34,6 +35,7 @@ public class PlayerData
         baseAgility = Random.Range(1, 4);
         baseStamina = Random.Range(1, 4);
 
+        cumulativeStaminaHealthBonus = baseStamina;
         currentWeapon = null;
 
         currentLevel = 1;
@@ -47,8 +49,13 @@ public class PlayerData
     {
         if (currentLevel >= MAX_LEVEL) return;
 
+        cumulativeStaminaHealthBonus += this.Stamina;
+
         currentLevel++;
         availableTalentPoints += 1;
+
+        RecalculateMaxHealth();
+        RestoreHealth();
     }
 
     public void UpgradeTalent(TalentSO talent)
@@ -78,7 +85,8 @@ public class PlayerData
     public void RecalculateMaxHealth()
     {
         int healthBonus = CalculateBonusFromTalents(talent => talent.maxHealthBonus);
-        maxHealth = healthBonus + this.Stamina * this.currentLevel;
+        // maxHealth = healthBonus + this.Stamina;
+        maxHealth = healthBonus + cumulativeStaminaHealthBonus;
     }
 
 

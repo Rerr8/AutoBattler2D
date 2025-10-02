@@ -18,8 +18,8 @@ public class TalentSlot : MonoBehaviour
     public TMP_Text talentDescription;
     public GameObject descriptionPanel;
 
-    public static event Action<TalentSlot> OnAbilityPointSpent;
-    public static event Action<TalentSlot> OnAbilityMaxed;
+    public static event Action<TalentSlot> OnTalentPointSpent;
+    public static event Action<TalentSlot> OnTalentMaxed;
 
     private void OnValidate()
     {
@@ -41,7 +41,7 @@ public class TalentSlot : MonoBehaviour
         currentLevel = level;
         if (currentLevel >= talentSO.maxLevel)
         {
-            OnAbilityMaxed?.Invoke(this);
+            OnTalentMaxed?.Invoke(this);
         }
         UpdateUI();
     }
@@ -53,11 +53,11 @@ public class TalentSlot : MonoBehaviour
             if (GameManager.Instance.player == null) return;
             GameManager.Instance.player.UpgradeTalent(talentSO);
             currentLevel++;
-            OnAbilityPointSpent?.Invoke(this);
+            OnTalentPointSpent?.Invoke(this);
 
             if (currentLevel >= talentSO.maxLevel)
             {
-                OnAbilityMaxed?.Invoke(this);
+                OnTalentMaxed?.Invoke(this);
             }
             UpdateUI();
         }
