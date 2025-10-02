@@ -8,5 +8,29 @@
 - **Дерево талантов:** система прокачки, позволяющая создавать уникальные сборки.
 - **Разнообразные враги:** несколько типов врагов с уникальными способностями и уязвимостями.
 - **Визуальные эффекты:** немного безвкусной анимации ударов и эффекты для лучшей обратной связи в бою.
+  
+Подробное описание задания и соответственно реализованных механик описано в файле "Тестовое_задание_Программирование.pdf"
 
 ## Скриншоты
+
+**Главное меню**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/984aa2db-873e-49b0-ab0b-016d4bfd5e59" />
+
+**Создание персонажа**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/90f2ee09-575c-4cde-b887-c3c387693d10" />
+
+**Битва**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/5592e510-cdae-4f4d-8ea0-c6ca48e0998f" />
+
+**Выбор награды**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/e68b4887-2ab6-4616-bfb1-7628d1656679" />
+
+**Прокачка талантов**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/0ecc0198-72d6-4c35-8dd4-2908fb4795c4" />
+
+**Экран после смерти (экран проигрыша)**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b40c6f28-eca5-4222-a7e1-c84921627cb0" />
+
+**Экран успешного прохождения игры (после 5 побед)**
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a7bfeeaf-99ab-4337-9029-6bf234f53e88" />
+
