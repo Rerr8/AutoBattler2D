@@ -26,7 +26,8 @@
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/e68b4887-2ab6-4616-bfb1-7628d1656679" />
 
 **Прокачка талантов**
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/0ecc0198-72d6-4c35-8dd4-2908fb4795c4" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/75c4a61f-cf8d-43ca-91fe-c54f7de45622" />
+
 
 **Экран после смерти (экран проигрыша)**
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b40c6f28-eca5-4222-a7e1-c84921627cb0" />
